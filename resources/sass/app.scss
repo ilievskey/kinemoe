@@ -1,0 +1,229 @@
+// Fonts
+@import url('https://fonts.bunny.net/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import 'bootstrap/scss/bootstrap';
+
+//keyframes
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+//responsiveness
+@media (max-width: 1328px){
+    #dash-home-content{
+        display: initial !important;
+    }
+}
+
+@media (max-width: 992px){
+    #content-table{
+        .no-mobile{
+            display: none;
+        }
+        .img, .title, .actions{
+            display: initial !important;
+        }
+    }
+}
+
+
+@media (max-width: 768px) {
+    //sidebar stuff
+    #sidebar-toggle{
+        display: none !important;
+    }
+
+    #dash-side{
+        height: auto !important;
+        width: 100% !important;
+        position: fixed;
+        bottom: 0;
+        flex-direction: row;
+        overflow-x: auto;
+        padding-bottom: 1.5em;
+        #dash-name{
+            display: none !important;
+        }
+
+        #dash-items{
+            display: flex;
+            flex-direction: row !important;
+            margin-left: auto;
+            margin-right: auto;
+            white-space: nowrap;
+            p{
+                display: none !important;
+            }
+        }
+    }
+
+    #dash-content{
+        margin-left: 0 !important;
+    }
+    .sidebar {
+        width: 0;
+    }
+
+    .dash-content {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+
+    //showcontent
+    #showContent{
+        display: initial !important;
+    }
+
+    //dashboard home
+    #dash-home-content{
+        #statsChart{
+            width: 16em !important;
+            height: 16em !important;
+        }
+        .card{
+            width: 19em !important;
+            background: white;
+        }
+    }
+
+    //admin edit user
+    .usercontent{
+        display: initial !important;   
+    }
+
+    .active{
+        border-top: none !important;
+        border-bottom: 1px solid rgba($color: #000000, $alpha: 0.1);
+        border-right: 1px solid rgba($color: #000000, $alpha: 0.1);
+        border-left: 1px solid rgba($color: #000000, $alpha: 0.1);
+        border-bottom-left-radius: 20px !important;
+        border-bottom-right-radius: 20px !important;
+        border-start-start-radius: initial !important;
+        background-color: #f8fafc;
+    }
+}
+
+//admin edit user
+#admin-edit-user{
+    .profile-pic{
+        text-align: center;
+        .img-thumbnail{
+            width: 10em !important;
+            height: 10em !important;
+            object-fit: cover !important;
+            border-radius: 50% !important;
+        }
+    }
+    .form-group{
+        text-align: center;
+
+        label{
+            color: rgba($color: #000000, $alpha: 0.5);
+        }
+        input{
+            font-weight: bold;
+            border: none;
+            font-size: 1.5em;
+            text-align: center;
+            border-bottom: 2px solid black;
+        }
+    }
+}
+
+//sidebar stuff
+#dash-side{
+    background-color: #eaeaea;
+    height: calc(100vh - 111px);
+    .nav-link{
+        text-align: center;
+        &:hover{
+            background-color: #d7d7d7;
+        }
+        font-size: medium;
+        padding: 1em;
+    }
+}
+
+.sidebar {
+    position: fixed;
+    background-color: #f8f9fa;
+    overflow-y: auto;
+    z-index: 1000;
+}
+
+.sidebar-collapsed {
+    width: 120px;
+    overflow: hidden;
+    .text-decoration-none{
+        writing-mode: sideways-lr;
+    }
+}
+
+.dash-content {
+    margin-left: 205px !important;
+}
+
+
+//scrolling content
+.content-scroll-container {
+    overflow-x: scroll;
+    white-space: nowrap;
+}
+  
+  .content-item {
+    display: inline-block;
+    margin: 1em;
+    img{
+        transition: box-shadow 0.2s ease-in-out;
+        box-shadow: 1px 1px 10px black;
+        width: 40vmin;
+        height: 56vmin;
+        &:hover{
+            box-shadow: 0px 0px 0px black;
+            box-shadow: none;
+        }
+    }
+}
+
+// dashboard home
+#dash-home-content{
+    .card{
+        width: 24em;
+        background: white;
+    }
+}
+
+//essentials
+.darkbody{
+    filter: invert(95%) hue-rotate(180deg);
+    background-color: #111111;
+}
+
+.active{
+    border-top: 1px solid rgba($color: #000000, $alpha: 0.1);
+    border-bottom: 1px solid rgba($color: #000000, $alpha: 0.1);
+    border-left: 1px solid rgba($color: #000000, $alpha: 0.1);
+    border-start-start-radius: 20px;
+    border-end-start-radius: 20px;
+    background-color: #f8fafc;
+}
+#statsChart{
+    width: 20em !important;
+    height: 20em !important;
+}
+
+#loading-circle{
+    width: 2em; /* Adjust the size as needed */
+    height: 2em; /* Adjust the size as needed */
+    animation: spin 1s linear infinite; /* Animation properties */
+}
